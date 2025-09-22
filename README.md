@@ -251,10 +251,10 @@ Para iniciar o bot:
 
 ## 📬 Contato
 
-- Desenvolvido por **Cipriano**
-- Telegram: @ocipriano
-- Email: redealfa.password440@passmail.com
-- Discord: Rede Alfa - https://discord.gg/kBHcmUbZAP
+- Desenvolvido por **Mikey**
+- **Email:** code.wish815@passmail.com
+- **GitHub:** [https://github.com/NunchuckCoder](https://github.com/NunchuckCoder)
+- **Discord:** Rede Alfa - [https://discord.gg/kBHcmUbZAP](https://discord.gg/kBHcmUbZAP)
 
 ---
 
