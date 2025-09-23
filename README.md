@@ -1,6 +1,12 @@
-# 🤖 Rede Alfa - Bot de Alertas Telegram
-
-Este projeto é um **bot para Telegram** desenvolvido em Python que fornece **alertas automáticos** e comandos interativos com informação relevante para Portugal.
+<h1 align="center">Rede Alfa - Bot de Alertas Telegram</h1>
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" />
+  <img src="https://img.shields.io/badge/JSON-000?style=for-the-badge&logo=json&logoColor=fff" />
+  <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
+  <img src="https://img.shields.io/badge/Notepad++-90E59A.svg?style=for-the-badge&logo=notepad%2b%2b&logoColor=black" />
+  <img src="https://img.shields.io/badge/-Raspberry_Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi" />
+</p>
+<p align="center">Este projeto é um <b>bot para Telegram</b> desenvolvido em Python que fornece <b>alertas automáticos</b> e comandos interativos com informação relevante para Portugal.</p>
 
 ---
 
