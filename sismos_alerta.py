@@ -1,3 +1,15 @@
+# ================================================================================ #
+#                                                                                  #
+# Ficheiro:      sismos_alerta.py                                                  #
+# Autor:         NunchuckCoder                                                     #
+# Versão:        1.0                                                               #
+# Data:          Julho 2025                                                        #
+# Descrição:     Verifica periodicamente sismos de grande magnitude e envia        #
+#                alertas para canais do Telegram.                                  #
+# Licença:       MIT License                                                       #
+#                                                                                  #
+# ================================================================================ #
+
 import os
 import aiohttp
 import json
@@ -5,7 +17,9 @@ from datetime import datetime
 from telegram.ext import ContextTypes
 from dotenv import load_dotenv
 
-# ---------------------- CARREGAR VARIÁVEIS DE AMBIENTE ----------------------
+# ================================================================================ #
+# ------------------------ CARREGAR VARIÁVEIS DE AMBIENTE ------------------------ #
+# ================================================================================ #
 
 load_dotenv()
 
@@ -16,7 +30,9 @@ MIN_MAGNITUDE_ALERTA = float(os.getenv("MIN_MAGNITUDE_ALERTA", 6))
 SISMOS_API = os.getenv("SISMOS_API")
 ARQUIVO_SISMOS = "sismos_notificados.json"
 
-# ---------------------- FUNÇÕES PARA ARMAZENAR/VERIFICAR ---------------------
+# ================================================================================ #
+# ----------------------- FUNÇÕES PARA ARMAZENAR/VERIFICAR ----------------------- #
+# ================================================================================ #
 
 def carregar_sismos_notificados():
     try:
@@ -29,7 +45,9 @@ def guardar_sismos_notificados(sismos_set):
     with open(ARQUIVO_SISMOS, "w", encoding="utf-8") as f:
         json.dump(list(sismos_set), f, ensure_ascii=False, indent=2)
 
-# ------------------------ FUNÇÃO PRINCIPAL DE ALERTA -------------------------
+# ================================================================================ #
+# -------------------------- FUNÇÃO PRINCIPAL DE ALERTA -------------------------- #
+# ================================================================================ #
 
 async def verificar_sismos_graves(context: ContextTypes.DEFAULT_TYPE):
     bot = context.bot
