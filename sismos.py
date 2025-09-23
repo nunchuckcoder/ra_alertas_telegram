@@ -1,3 +1,15 @@
+# ================================================================================ #
+#                                                                                  #
+# Ficheiro:      sismos.py                                                         #
+# Autor:         NunchuckCoder                                                     #
+# Versão:        1.0                                                               #
+# Data:          Julho 2025                                                        #
+# Descrição:     Funções utilitárias para obter e formatar dados sísmicos usando   #
+#                uma API de sismos e enviar para o Telegram.                       #
+# Licença:       MIT License                                                       #
+#                                                                                  #
+# ================================================================================ #
+
 import os
 import aiohttp
 from dotenv import load_dotenv
@@ -5,13 +17,17 @@ from telegram import Update
 from telegram.ext import ContextTypes
 from datetime import datetime
 
-# ------------------------- CARREGAR VARIÁVEIS DE AMBIENTE -----------------
+# ================================================================================ #
+# ------------------------ CARREGAR VARIÁVEIS DE AMBIENTE ------------------------ #
+# ================================================================================ #
 
 load_dotenv()
 
 SISMOS_API = os.getenv("SISMOS_API")
 
-# ------------------------- CONFIGURAÇÕES DA MAGNITUDE ----------------------
+# ================================================================================ #
+# -------------------------- CONFIGURAÇÕES DA MAGNITUDE -------------------------- #
+# ================================================================================ #
 
 def cor_magnitude(mag: float) -> str:
     if mag >= 6:
@@ -23,7 +39,9 @@ def cor_magnitude(mag: float) -> str:
     else:
         return "⚪"  # Neutro (abaixo de 2)
 
-# ------------------------- COMANDOS DO BOT --------------------------------
+# ================================================================================ #
+# -------------------------------- COMANDOS DO BOT ------------------------------- #
+# ================================================================================ #
 
 async def sismos(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     params = {
