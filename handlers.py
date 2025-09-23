@@ -1,8 +1,17 @@
-# Ficheiro: handlers.py
+# ================================================================================ #
+#                                                                                  #
+# Ficheiro:      handlers.py                                                       #
+# Autor:         NunchuckCoder                                                     #
+# Versão:        1.0                                                               #
+# Data:          Julho 2025                                                        #
+# Descrição:     Handlers do bot Telegram para comandos de previsão do tempo,      #
+#                temperatura, fogos, sismos e menu interativo.                     #
+# Licença:       MIT License                                                       #
+#                                                                                  #
+# ================================================================================ #
 
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
-
 from locais import ID_LOCAL_TO_NAME, LOCAIS_POR_DISTRITO
 from ipma_utils import (
     obter_previsao_ipma,
@@ -11,7 +20,9 @@ from ipma_utils import (
 from fogos import obter_fogos_ativos
 from sismos import sismos, magnitude_sismica
 
-# ------------------------- COMANDOS DO BOT --------------------------------
+# ================================================================================ #
+# -------------------------------- COMANDOS DO BOT ------------------------------- #
+# ================================================================================ #
 
 # Comando /previsao - mostra lista de distritos
 async def comando_lista_distritos(update: Update, context: ContextTypes.DEFAULT_TYPE):
