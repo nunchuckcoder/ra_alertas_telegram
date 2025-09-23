@@ -1,4 +1,14 @@
-# Ficheiro: ipma_utils.py
+# ================================================================================ #
+#                                                                                  #
+# Ficheiro:      ipma_utils.py                                                     #
+# Autor:         NunchuckCoder                                                     #
+# Versão:        1.0                                                               #
+# Data:          Julho 2025                                                        #
+# Descrição:     Funções utilitárias para obter e formatar previsões meteorológicas#
+#                usando a API do IPMA (previsão diária e multi-dias).              #
+# Licença:       MIT License                                                       #
+#                                                                                  #
+# ================================================================================ #
 
 import os
 import aiohttp
@@ -7,20 +17,26 @@ from dotenv import load_dotenv
 from datetime import datetime, timezone, timedelta
 
 
-# ------------------------- CARREGAR VARIÁVEIS DE AMBIENTE -----------------
+# ================================================================================ #
+# ------------------------ CARREGAR VARIÁVEIS DE AMBIENTE ------------------------ #
+# ================================================================================ #
 
 load_dotenv()
 
 IPMA_API = os.getenv("IPMA_API")
 
-# ------------------------- CONFIGURAÇÃO DE LOGS ---------------------------
+# ================================================================================ #
+# ----------------------------- CONFIGURAÇÃO DE LOGS ----------------------------- #
+# ================================================================================ #
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
 )
 logger = logging.getLogger("ipma_utils")
 
-# ------------------------- CONFIGURAÇÕES DE FUNÇÕES -----------------------
+# ================================================================================ #
+# --------------------------- CONFIGURAÇÃO DE FUNÇÕES ---------------------------- #
+# ================================================================================ #
 
 # Função para obter previsão apenas para um local específico
 async def obter_previsao_ipma(local_id: int):
