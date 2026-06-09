@@ -1,0 +1,29 @@
+# Segredos / configuração local
+.env
+
+# Estado em runtime (gerado automaticamente pelo bot)
+sismos_notificados.json
+sismos_portugal_notificados.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+dist/
+*.egg-info/
+
+# Ambientes virtuais
+venv/
+.venv/
+env/
+
+# Logs
+*.log
+
+# IDE / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
