@@ -1,6 +1,12 @@
-# 🤖 Rede Alfa — Bot de Alertas Telegram
-
-Bot para **Telegram** desenvolvido em Python que fornece **alertas automáticos** e comandos interativos com informação relevante para Portugal: sismos, meteorologia (IPMA) e incêndios ativos.
+<h1 align="center">Rede Alfa - Bot de Alertas Telegram</h1>
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" />
+  <img src="https://img.shields.io/badge/JSON-000?style=for-the-badge&logo=json&logoColor=fff" />
+  <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
+  <img src="https://img.shields.io/badge/status-active-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" />
+</p>
+<p align="center">Bot para <b>Telegram</b> desenvolvido em Python que fornece <b>alertas automáticos</b> e comandos interativos com informação relevante para Portugal: sismos, meteorologia (IPMA) e incêndios ativos.</p>
 
 ---
 
