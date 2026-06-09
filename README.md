@@ -1,12 +1,6 @@
-<h1 align="center">Rede Alfa - Bot de Alertas Telegram</h1>
-<p align="center">
-  <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" />
-  <img src="https://img.shields.io/badge/JSON-000?style=for-the-badge&logo=json&logoColor=fff" />
-  <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
-  <img src="https://img.shields.io/badge/status-active-success?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" />
-</p>
-<p align="center">Bot para <b>Telegram</b> desenvolvido em Python que fornece <b>alertas automáticos</b> e comandos interativos com informação relevante para Portugal: sismos, meteorologia (IPMA) e incêndios ativos.</p>
+# 🤖 Rede Alfa — Bot de Alertas Telegram
+
+Bot para **Telegram** desenvolvido em Python que fornece **alertas automáticos** e comandos interativos com informação relevante para Portugal: sismos, meteorologia (IPMA) e incêndios ativos.
 
 ---
 
@@ -27,23 +21,14 @@
 
 - `/previsao` — previsão **dos próximos 5 dias** para qualquer localidade
 - `/temperatura` — previsão **do dia atual**: temperatura mínima/máxima, índice UV e probabilidade de precipitação
-  - Temperatura mínima e máxima
-  - Índice UV
-  - Probabilidade de precipitação
 
 ### 🔥 Fogos Ativos
 
 - `/fogos` — lista dos incêndios ativos em Portugal (local, estado, data/hora e meios mobilizados)
-  - Inclui local, estado, data, hora e meios mobilizados (operacionais, veículos, aéreos)
 
 ### 📈 Informação Sísmica
 
 - `/sismos` — últimos **10 sismos** (localização, data/hora, magnitude, profundidade e link para o Google Maps)
-  - Localização
-  - Data e hora
-  - Magnitude
-  - Profundidade
-  - Link direto para Google Maps
 - `/magnitude_sismica` — explicação dos tipos de magnitude (Richter, Momento, etc.)
 
 ### 📋 Menu e Ajuda
@@ -130,29 +115,6 @@ ra_alertas_telegram/
 ---
 
 ## 📜 Exemplos de saída
-
-### 📍 Ver previsão temperatura (5 dias)
-
-   ```bash
-   📍 Praia de Armação de Pera - Previsão para os próximos 5 dias:
-
-   📅 2025-08-02
-   🌡️ 19.7°C ~ 31.8°C
-   🔆 Índice UV: 8.7
-   🌦️ Prob. de precipitação: 0.0%
-   ```
-   
-### ️⚠️ Temperatura (hoje)
-
-   ```bash
-   🌤️ Temperaturas para Praia de Armação de Pera (Hoje)
-
-   🗓️ Data: 2025-08-02
-   🌡️ Temperatura Mínima: 19.7°C
-   🌡️ Temperatura Máxima: 31.8°C
-   🔆 Índice UV: 8.7
-   🌦️ Prob. de precipitação: 0.0%
-   ```
 
 ### 🔥 Incêndios ativos
 

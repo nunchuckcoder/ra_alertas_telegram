@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Osvaldo Cipriano (github.com/nunchuckcoder)
 
@@ -31,28 +30,10 @@ ID_LOCAL_TO_NAME = {
     3430100: "Terceira",
     3470100: "Faial",
     3480200: "Flores"
-=======
-# ================================================================================ #
-#                                                                                  #
-# Ficheiro:      locais.py                                                         #
-# Autor:         NunchuckCoder                                                     #
-# Versão:        1.0                                                               #
-# Data:          Julho 2025                                                        #
-# Descrição:     Dicionários com distritos e localidades de Portugal e arquipélagos#
-#                usados para consultas de previsão meteorológica na API do IPMA.   #
-# Licença:       MIT License                                                       #
-#                                                                                  #
-# ================================================================================ #
-
-# Dicionário com os distritos: id → nome
-ID_LOCAL_TO_NAME = {
-
->>>>>>> 30a5fad083727b992bdfba0aa3648b41f19df41a
 }
 
 # Dicionário com as localidades agrupadas por distrito
 LOCAIS_POR_DISTRITO = {
-<<<<<<< HEAD
     1010500: [  # Aveiro
         {"local": "Águeda", "globalIdLocal": 1010100},
         {"local": "Albergaria-a-Velha", "globalIdLocal": 1010200},
@@ -528,7 +509,4 @@ LOCAIS_POR_DISTRITO = {
     3480200: [  # Flores
         {"local": "Santa Cruz das Flores", "globalIdLocal": 3480200},
     ],
-=======
-    
->>>>>>> 30a5fad083727b992bdfba0aa3648b41f19df41a
 }

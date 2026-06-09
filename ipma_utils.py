@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Osvaldo Cipriano (github.com/nunchuckcoder)
 
@@ -21,49 +20,6 @@ TZ_LISBOA = ZoneInfo("Europe/Lisbon")
 # ------------------------- CONFIGURAÇÕES DE FUNÇÕES -----------------------
 
 
-=======
-# ================================================================================ #
-#                                                                                  #
-# Ficheiro:      ipma_utils.py                                                     #
-# Autor:         NunchuckCoder                                                     #
-# Versão:        1.0                                                               #
-# Data:          Julho 2025                                                        #
-# Descrição:     Funções utilitárias para obter e formatar previsões meteorológicas#
-#                usando a API do IPMA (previsão diária e multi-dias).              #
-# Licença:       MIT License                                                       #
-#                                                                                  #
-# ================================================================================ #
-
-import os
-import aiohttp
-import logging
-from dotenv import load_dotenv
-from datetime import datetime, timezone, timedelta
-
-
-# ================================================================================ #
-# ------------------------ CARREGAR VARIÁVEIS DE AMBIENTE ------------------------ #
-# ================================================================================ #
-
-load_dotenv()
-
-IPMA_API = os.getenv("IPMA_API")
-
-# ================================================================================ #
-# ----------------------------- CONFIGURAÇÃO DE LOGS ----------------------------- #
-# ================================================================================ #
-
-logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
-)
-logger = logging.getLogger("ipma_utils")
-
-# ================================================================================ #
-# --------------------------- CONFIGURAÇÃO DE FUNÇÕES ---------------------------- #
-# ================================================================================ #
-
-# Função para obter previsão apenas para um local específico
->>>>>>> 30a5fad083727b992bdfba0aa3648b41f19df41a
 async def obter_previsao_ipma(local_id: int):
     """
     Obtém a previsão meteorológica para o dia atual de um local específico,
@@ -72,7 +28,6 @@ async def obter_previsao_ipma(local_id: int):
     url = f"{IPMA_API}{local_id}.json"
 
     try:
-<<<<<<< HEAD
         session = get_session()
         async with session.get(url) as response:
             if response.status != 200:
@@ -123,99 +78,29 @@ async def obter_previsao_multidias_ipma(local_id: int):
             return await response.json()
     except Exception:
         logger.exception("Erro ao obter previsão multi-dias para local %s", local_id)
-=======
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url) as response:
-                if response.status != 200:
-                    logger.error(f"Erro HTTP {response.status} ao obter previsão para local {local_id}")
-                    return None
-                data = await response.json()
-
-                # Obter data de hoje em Portugal continental
-                hoje = datetime.now(timezone(timedelta(hours=1))).date().isoformat()
-
-                # Filtrar registos do dia de hoje
-                previsoes_hoje = [p for p in data if p.get("dataPrev", "").startswith(hoje)]
-                if not previsoes_hoje:
-                    logger.warning(f"Sem previsões para hoje ({hoje}) para o local {local_id}")
-                    return None
-
-                # Selecionar os melhores registos disponíveis
-                tmin_reg = next((p for p in previsoes_hoje if p.get("tMin") is not None), None)
-                tmax_reg = next((p for p in previsoes_hoje if p.get("tMax") is not None), None)
-                iuv_reg  = next((p for p in previsoes_hoje if p.get("iUv") is not None), None)
-                prec_reg = next((p for p in previsoes_hoje if p.get("probabilidadePrecipita") is not None), None)
-
-                resultado = {
-                    "dataPrev": hoje + "T00:00:00",
-                    "tMin": tmin_reg.get("tMin") if tmin_reg else None,
-                    "tMax": tmax_reg.get("tMax") if tmax_reg else None,
-                    "iUv": iuv_reg.get("iUv") if iuv_reg else None,
-                    "probabilidadePrecipita": prec_reg.get("probabilidadePrecipita") if prec_reg else None,
-                }
-
-                return [resultado]  # mantém compatibilidade com a lógica do handler
-
-    except Exception as e:
-        logger.exception(f"Erro ao obter previsão para local {local_id}: {e}")
-        return None
-
-async def obter_previsao_multidias_ipma(local_id: int):
-    """
-    Obtém a previsão meteorológica completa (vários dias) de um local específico.
-    """
-    url = f"{IPMA_API}{local_id}.json"
-
-    try:
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url) as response:
-                if response.status != 200:
-                    logger.error(f"Erro HTTP {response.status} ao obter previsão para local {local_id}")
-                    return None
-                data = await response.json()
-                return data  # ← devolve todos os registos
-    except Exception as e:
-        logger.exception(f"Erro ao obter previsão multi-dias para local {local_id}: {e}")
->>>>>>> 30a5fad083727b992bdfba0aa3648b41f19df41a
         return None
 
 
 def formatar_mensagem_previsao_multidias(previsoes: list, nome_local: str) -> str:
-<<<<<<< HEAD
     """Formata a previsão de 5 dias em HTML (campos dinâmicos escapados)."""
     mensagem = f"📍 <b>{html.escape(nome_local)}</b> - Previsão para os próximos 5 dias:\n"
-=======
-    mensagem = f"📍 {nome_local} - Previsão para os próximos 5 dias:\n"
->>>>>>> 30a5fad083727b992bdfba0aa3648b41f19df41a
     dias_adicionados = set()
 
     # Agrupar previsões por dia
     previsoes_por_dia = {}
     for prev in previsoes:
-<<<<<<< HEAD
         data_prev = prev.get("dataPrev", "").split("T")[0]
         previsoes_por_dia.setdefault(data_prev, []).append(prev)
 
-=======
-        data_prev_completa = prev.get("dataPrev", "")
-        data_prev = data_prev_completa.split("T")[0]
-        previsoes_por_dia.setdefault(data_prev, []).append(prev)
-
-    # Iterar pelas datas em ordem
->>>>>>> 30a5fad083727b992bdfba0aa3648b41f19df41a
     for data_prev in sorted(previsoes_por_dia.keys()):
         if data_prev in dias_adicionados:
             continue
 
         grupo = previsoes_por_dia[data_prev]
         registo_00h = next((p for p in grupo if p.get("dataPrev", "").endswith("T00:00:00")), None)
-<<<<<<< HEAD
         registo_com_temp = next(
             (p for p in grupo if p.get("tMin") is not None and p.get("tMax") is not None), None
         )
-=======
-        registo_com_temp = next((p for p in grupo if p.get("tMin") is not None and p.get("tMax") is not None), None)
->>>>>>> 30a5fad083727b992bdfba0aa3648b41f19df41a
         registo_com_uv = next((p for p in grupo if p.get("iUv") is not None), None)
 
         tmin = registo_com_temp.get("tMin") if registo_com_temp else None
