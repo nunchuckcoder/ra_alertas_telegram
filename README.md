@@ -27,14 +27,23 @@
 
 - `/previsao` — previsão **dos próximos 5 dias** para qualquer localidade
 - `/temperatura` — previsão **do dia atual**: temperatura mínima/máxima, índice UV e probabilidade de precipitação
+  - Temperatura mínima e máxima
+  - Índice UV
+  - Probabilidade de precipitação
 
 ### 🔥 Fogos Ativos
 
 - `/fogos` — lista dos incêndios ativos em Portugal (local, estado, data/hora e meios mobilizados)
+  - Inclui local, estado, data, hora e meios mobilizados (operacionais, veículos, aéreos)
 
 ### 📈 Informação Sísmica
 
 - `/sismos` — últimos **10 sismos** (localização, data/hora, magnitude, profundidade e link para o Google Maps)
+  - Localização
+  - Data e hora
+  - Magnitude
+  - Profundidade
+  - Link direto para Google Maps
 - `/magnitude_sismica` — explicação dos tipos de magnitude (Richter, Momento, etc.)
 
 ### 📋 Menu e Ajuda
@@ -121,6 +130,29 @@ ra_alertas_telegram/
 ---
 
 ## 📜 Exemplos de saída
+
+### 📍 Ver previsão temperatura (5 dias)
+
+   ```bash
+   📍 Praia de Armação de Pera - Previsão para os próximos 5 dias:
+
+   📅 2025-08-02
+   🌡️ 19.7°C ~ 31.8°C
+   🔆 Índice UV: 8.7
+   🌦️ Prob. de precipitação: 0.0%
+   ```
+   
+### ️⚠️ Temperatura (hoje)
+
+   ```bash
+   🌤️ Temperaturas para Praia de Armação de Pera (Hoje)
+
+   🗓️ Data: 2025-08-02
+   🌡️ Temperatura Mínima: 19.7°C
+   🌡️ Temperatura Máxima: 31.8°C
+   🔆 Índice UV: 8.7
+   🌦️ Prob. de precipitação: 0.0%
+   ```
 
 ### 🔥 Incêndios ativos
 
