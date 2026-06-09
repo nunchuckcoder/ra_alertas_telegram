@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 python-telegram-bot[job-queue]==20.8
 aiohttp==3.9.5
 python-dotenv==1.0.1
 tzdata; platform_system == "Windows"
+=======
+python-telegram-bot[job-queue]==20.8
+aiohttp==3.9.5
+python-dotenv==1.0.1
+>>>>>>> 30a5fad083727b992bdfba0aa3648b41f19df41a
