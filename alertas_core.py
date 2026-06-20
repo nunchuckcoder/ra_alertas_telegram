@@ -17,7 +17,7 @@ from typing import Callable, Optional
 from telegram import LinkPreviewOptions
 from telegram.ext import ContextTypes
 
-from config import BASE_DIR, CANAIS_ALERTA_SISMOS, SISMOS_API
+from config import DATA_DIR, CANAIS_ALERTA_SISMOS, SISMOS_API
 from http_session import get_session
 
 logger = logging.getLogger(__name__)
@@ -62,7 +62,7 @@ async def processar_sismos(
         transformar_lugar: função opcional para formatar o nome do local.
     """
     bot = context.bot
-    estado_path = BASE_DIR / ficheiro_estado
+    estado_path = DATA_DIR / ficheiro_estado
     notificados = _carregar(estado_path)
     houve_novos = False
 

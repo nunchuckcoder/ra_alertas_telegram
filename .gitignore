@@ -4,6 +4,8 @@
 # Estado em runtime (gerado automaticamente pelo bot)
 sismos_notificados.json
 sismos_portugal_notificados.json
+data/
+logs/
 
 # Python
 __pycache__/

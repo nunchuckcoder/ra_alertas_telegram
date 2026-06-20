@@ -1,0 +1,21 @@
+services:
+  ra_alertas_telegram:
+    build: .
+    container_name: ra_alertas_telegram
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+
+    working_dir: /app
+
+    networks:
+      - bots-network
+
+networks:
+  bots-network:
+    driver: bridge

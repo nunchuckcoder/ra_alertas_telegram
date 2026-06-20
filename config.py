@@ -16,6 +16,9 @@ from dotenv import load_dotenv
 # Diretório base do projeto (independente do working directory de quem corre).
 BASE_DIR = Path(__file__).resolve().parent
 
+DATA_DIR = Path(os.getenv("BOT_DATA_DIR", BASE_DIR / "data"))
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+
 # Carregar variáveis do .env
 load_dotenv(BASE_DIR / ".env")
 
